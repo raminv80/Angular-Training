@@ -1,0 +1,20 @@
+{
+  "name": "angular_training",
+  "version": "0.0.0",
+  "homepage": "https://github.com/raminv80/Angular-Training",
+  "authors": [
+    "Ramin Vakilian <ramin@mindvalley.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.9",
+    "bootstrap": "~3.0.3",
+  }
+}
