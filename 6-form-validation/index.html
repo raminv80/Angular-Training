@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    body { padding-top: 70px; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form name="myForm">
+        userType required: <input name="inputText" ng-model="userType" required>
+        <span class="label label-warning" ng-show="myForm.inputText.$error.required">Required!</span><br>
+
+        <hr/>
+        <pre>
+          <tt>userType = {{userType}}</tt><br>
+          <tt>myForm.inputText.$valid = {{myForm.inputText.$valid}}</tt><br>
+          <tt>myForm.inputText.$error = {{myForm.inputText.$error}}</tt><br>
+          <tt>myForm.$valid = {{myForm.$valid}}</tt><br>
+          <tt>myForm.$error.required = {{!!myForm.$error.required}}</tt><br>
+        </pre>
+
+      </form>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+  </body>
+</html>
