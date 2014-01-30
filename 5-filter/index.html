@@ -9,10 +9,12 @@
     <div class="container" ng-controller="aController" ng-init="init()">
       <h1>Fruits</h1>
       <p class="lead">There are {{basket.length}} fruits in the basket</p>
+      <p>What is your favorite taste? <input ng-model="my_taste"></p>
       <div class="list-group">
-        <a href="#" class="list-group-item" ng-repeat="fruit in basket">
+        <a href="#" class="list-group-item" ng-repeat="fruit in basket | filter: {taste: my_taste}">
           <img ng-src="{{fruit.thumb}}" width="32">
-          {{fruit.name}}
+          {{fruit.name | uppercase}}
+          <span>{{fruit.price | currency}}</span>
         </a>
       </div>
     </div>
