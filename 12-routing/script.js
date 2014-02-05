@@ -1,21 +1,18 @@
-function aController($scope){
+angular.module('myApp', ['components'])
+	.controller('aController', ['$scope', 'myUtilities', 'appThirdParties', aController])
+
+function aController($scope, myUtilities, thirdParty){
 	$scope.basket = [];
 	$scope.new_fruit = {name:null, price:null}
-	$scope.id=3;
-
-	order_list = [
-		{id:0, name:'apple', price: 5},
-		{id:1, name:'orange',price: 7},
-		{id:2, name:'banana', price: 4.25},
-		{id:3, name:'watermelon', price: 20}
-	]
 
 	$scope.init = function(){
 		$scope.loadBasket();
+		$scope.greetings = thirdParty.sayHello();
 	}
 
 	$scope.loadBasket = function(){
-		$scope.basket = order_list;
+		$scope.basket = thirdParty.getFruits();
+		$scope.id=$scope.basket.length;
 	}
 
 	$scope.addItem = function(){
@@ -31,5 +28,9 @@ function aController($scope){
         items.splice(i, 1);
         break;
     }
+	}
+
+	$scope.pic_for = function(fruit){
+		return myUtilities.name2pic(fruit.name)
 	}
 }
