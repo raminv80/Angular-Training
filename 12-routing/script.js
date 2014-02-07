@@ -1,5 +1,17 @@
-angular.module('myApp', ['components'])
+angular.module('myApp', ['components','ngRoute'])
 	.controller('aController', ['$scope', 'myUtilities', 'appThirdParties', aController])
+	.config(function($routeProvider) {
+	  $routeProvider
+	    .when('/', {
+	      templateUrl:'fruit/show.html'
+	    })
+	    .when('/simple', {
+	      templateUrl:'fruit/simple.html'
+	    })
+	    .otherwise({
+	      redirectTo:'/'
+	    });
+	})
 
 function aController($scope, myUtilities, thirdParty){
 	$scope.basket = [];

@@ -11,14 +11,10 @@
       <p>{{greetings}}</p>
       <p class="lead">There are {{basket.length}} fruits in the basket</p>
       <p>Filter list for <input ng-model="search"></p>
+      <p><a href="#">view1</a> | <a href="#simple">view2</a></p>
       <div class="list-group">
         <div href="#" class="list-group-item" ng-repeat="fruit in basket | filter:search">
-          <img ng-src="{{pic_for(fruit)}}" width="32">
-          {{fruit.name | uppercase}}
-          <span>{{fruit.price | currency}}</span>
-          <button ng-click="removeItem(fruit)" type="button" class="btn btn-danger btn-xs pull-right">
-            <span class="glyphicon glyphicon-minus" title="Remove"></span>
-          </button>
+          <div ng-view></div>
         </div>
       </div>
       <div class="panel panel-default">
@@ -43,6 +39,7 @@
     <script src="../bower_components/jquery/jquery.min.js"></script>
     <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-route/angular-route.min.js"></script>
     <script src="components.js"></script>
     <script src="script.js"></script>
   </body>

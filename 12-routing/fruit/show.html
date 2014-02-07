@@ -1,0 +1,6 @@
+<img ng-src="{{pic_for(fruit)}}" width="32">
+{{fruit.name | uppercase}}
+<span>{{fruit.price | currency}}</span>
+<button ng-click="removeItem(fruit)" type="button" class="btn btn-danger btn-xs pull-right">
+  <span class="glyphicon glyphicon-minus" title="Remove"></span>
+</button>
